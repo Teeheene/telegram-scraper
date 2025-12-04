@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Scraper</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+		<h1>Telegram Scraper</h1>
+		</div>
+		<div>
+		<ul id="messages"></ul>
+		</div>
+	</div>
+
+	<script>
+		async function loadMessages() {
+			try {
+				const res = await fetch('http://localhost:3000/messages');
+				const messages = await res.json();
+
+				const ul = document.getElementById('messages');
+				console.log('all chat messages: ');
+				messages.forEach(msg => {
+					const li = document.createElement('li');
+					li.textContent = msg;
+					console.log(msg);
+					ul.appendChild(li);
+				});
+			} catch (e) {
+				console.error("FETCH ERROR");
+			}
+		}
+
+		loadMessages();
+	</script>
+</body>
+</html>

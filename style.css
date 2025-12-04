@@ -1,0 +1,22 @@
+.container {
+	margin: 26px 40px;
+	justify-content: center;
+	outline: 3px solid black;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+}
+
+.content {
+}
+
+ul {
+	list-style-type: none;
+	padding: 0px 400px 0px 400px;
+}
+
+li {
+	margin-bottom: 1.5em;
+}
