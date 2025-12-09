@@ -8,10 +8,14 @@
 <body>
 	<div class="container">
 		<div class="header">
-		<h1>Telegram Scraper</h1>
+			<h1>Telegram Scraper</h1>
 		</div>
+		<div class="content">
+			<button id="exportBtn">Download CSV</button>
+		</div>
+		<div class="divider"></div>
 		<div>
-		<ul id="messages"></ul>
+			<ul id="messages"></ul>
 		</div>
 	</div>
 
@@ -26,13 +30,21 @@
 				messages.forEach(msg => {
 					const li = document.createElement('li');
 					li.textContent = msg;
-					console.log(msg);
 					ul.appendChild(li);
 				});
 			} catch (e) {
 				console.error("FETCH ERROR");
 			}
 		}
+
+		document.getElementById('exportBtn').addEventListener('click', () => {
+			const a = document.createElement('a');
+			a.href = 'http://localhost:3000/messages.csv';
+			a.download = 'messages.csv';
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+		});
 
 		loadMessages();
 	</script>
