@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "aiwrapper": "^3.0.1",
     "cors": "^2.8.5",
     "express": "^5.2.1",
     "prebuilt-tdlib": "^0.1008057.1",

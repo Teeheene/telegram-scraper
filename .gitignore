@@ -1,0 +1,5 @@
+node_modules/
+_td_database/
+.~lock.*
+*.sqlite-shm
+*.sqlite-wal
